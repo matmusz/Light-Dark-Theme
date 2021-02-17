@@ -1,0 +1,109 @@
+body {
+    --accent-color: orangered;
+    --background-color: white;
+    --text-color: black;
+    --button-text-color: var(--background-color);
+    --transition-delay: 1s;
+
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: var(--transition-delay);
+    /*overflow: hidden;*/
+}
+
+body.dark {
+    --accent-color: #D0D066;
+    --background-color: #333;
+    --text-color: white;
+}
+
+
+#main {
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    margin-top:50vh;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: var(--accent-color);
+    color: var(--button-text-color);
+    cursor: pointer;
+    padding: .5em 1em;
+    border: none;
+    outline: none;
+    transition: var(--transition-delay);
+    transform: scale(1);
+}
+
+.button:hover,
+.button:focus {
+    transform: scale(1.1);
+}
+
+
+.button .icon {
+    margin-right: 0.6em;
+}
+
+
+.sun-moon{
+    --rotation: 0;
+    position: absolute;
+    top: 0;
+    left: 48%;
+    height: 200vmin;
+    pointer-events: none;
+    transform: rotate(var(--rotation));
+ 
+}
+
+.dark .sun-moon {
+    --rotation: 180deg;
+}
+
+.sun,
+.moon {
+    display: inline-block;
+    position: absolute;
+    transition: opacity var(--transition-delay);
+    width: 30px;
+    height: 30px;
+    fill: var(--accent-color);
+    transition: transorm var(--transition-delay);
+}
+
+.sun {
+    top: 5%;
+    opacity: 1;
+}
+
+.dark .sun {
+    opacity: 0;
+}
+
+.moon {
+    bottom: 5%;
+    opacity: 1;
+    rotate: 180deg;
+}
+
+.dark .moon {
+    opacity: 1;
+}
